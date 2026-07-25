@@ -71,7 +71,7 @@ export async function extractSoundscape(
   const transcript = formatTranscript(messages);
 
   const completion = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
+    model: "gpt-5.4-mini-2026-03-17",
     temperature: 0.7,
     response_format: {
       type: "json_schema",
