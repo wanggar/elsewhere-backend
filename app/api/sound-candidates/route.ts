@@ -2,6 +2,7 @@ import { randomUUID } from "crypto";
 import { jsonWithCors, optionsResponse } from "@/lib/cors";
 import { extractSoundscape } from "@/lib/extractSoundscape";
 import { generateSoundEffectBase64 } from "@/lib/generateSoundEffect";
+import { withAuth } from "@/lib/withAuth";
 import {
   CURATOR_MODES,
   type CuratorMode,
@@ -44,6 +45,9 @@ function parseRequest(body: unknown): SoundCandidatesRequest | null {
 }
 
 export async function POST(request: Request) {
+  const auth = await withAuth(request);
+  if (auth.errorResponse) return auth.errorResponse;
+
   let body: unknown;
   try {
     body = await request.json();

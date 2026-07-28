@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "app/api/sound-candidates/route.ts": {
+      "maxDuration": 120
+    }
+  }
+}

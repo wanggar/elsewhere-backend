@@ -47,3 +47,53 @@ export interface SoundCandidatesResponse {
   checklist: string[];
   candidates: SoundCandidateResponse[];
 }
+
+// ── Auth ──────────────────────────────────────────────────────────────────────
+
+export interface AppleSignInRequest {
+  identityToken: string;
+  fullName?: {
+    givenName?: string;
+    familyName?: string;
+  };
+}
+
+export interface AuthResponse {
+  accessToken: string;
+  refreshToken: string;
+  user: {
+    id: string;
+    displayName: string | null;
+  };
+}
+
+export interface RefreshRequest {
+  refreshToken: string;
+}
+
+// ── Library ───────────────────────────────────────────────────────────────────
+
+export interface LibrarySoundResponse {
+  id: string;
+  mode: CuratorMode;
+  title: string;
+  subtitle: string;
+  audioUrl: string;
+  createdAt: string;
+}
+
+export interface LibraryResponse {
+  sounds: LibrarySoundResponse[];
+}
+
+export interface SaveSoundRequest {
+  mode: CuratorMode;
+  title: string;
+  subtitle: string;
+  audioBase64: string;
+  generationPrompt?: string;
+}
+
+export interface SaveSoundResponse {
+  sound: LibrarySoundResponse;
+}
