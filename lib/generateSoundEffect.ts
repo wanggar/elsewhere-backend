@@ -32,7 +32,7 @@ export async function generateSoundEffectBase64(
     modelId: "eleven_text_to_sound_v2",
     loop: true,
     durationSeconds: DURATION_SECONDS,
-    promptInfluence: 0.4,
+    promptInfluence: 0.5,
     outputFormat: "mp3_44100_128",
   });
 

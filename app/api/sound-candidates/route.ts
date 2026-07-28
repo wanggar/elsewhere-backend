@@ -71,7 +71,7 @@ export async function POST(request: Request) {
 
     const audioResults = await Promise.all(
       extraction.candidates.map((candidate) =>
-        generateSoundEffectBase64(candidate.prompt)
+        generateSoundEffectBase64(candidate.prompt.slice(0, 450))
       )
     );
 

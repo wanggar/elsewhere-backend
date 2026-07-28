@@ -41,8 +41,9 @@ const EXTRACTION_SCHEMA = {
           },
           prompt: {
             type: "string",
+            maxLength: 350,
             description:
-              "Detailed ElevenLabs sound-effect prompt for a loopable ambient soundscape",
+              "ElevenLabs ambience loop prompt. Physical sounds only — no emotions or visuals. Under 350 characters.",
           },
         },
         required: ["title", "subtitle", "prompt"],
@@ -91,10 +92,13 @@ Rules:
 - Candidates must feel personal to what the user shared — identity, place, season, sensory details.
 - Titles are short and lowercase (e.g. "the living room", "just the heater").
 - Subtitles list 2–4 gentle layers separated by commas.
-- Prompts are written for ElevenLabs text-to-sound-effects: vivid ambient Foley/atmosphere, no music unless the user asked for it, suitable for seamless looping, 20–25 seconds of atmosphere.
+- Prompts describe PHYSICAL SOUNDS ONLY — no emotions, no visuals, no narrative. Use audio terminology: ambience, loop, drone, Foley, texture, room tone.
+- Structure each prompt as layered Foley in sequence: primary sound → secondary texture → optional distant detail. Example: "Soft rain falling on glass. Distant low hum of ventilation. Occasional creak of wood settling. Seamless ambient loop."
+- Prompts must be under 350 characters — specific and concrete beats long and descriptive.
+- No music unless the user explicitly asked for it.
 - Vary the three candidates: one fuller scene, one alternate angle, one stripped-down version.
 - headerTitle is SHORT UPPERCASE, ending or implying "THREE WAYS" when natural.
-- checklist: 3–4 short italic-feeling fragments from the conversation.`,
+- checklist: 3–4 short poetic fragments drawn from the conversation.`,
       },
       {
         role: "user",
