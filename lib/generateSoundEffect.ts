@@ -1,6 +1,6 @@
 import { ElevenLabsClient } from "@elevenlabs/elevenlabs-js";
 
-const DURATION_SECONDS = 22;
+const DURATION_SECONDS = 15;
 
 async function streamToBuffer(
   stream: ReadableStream<Uint8Array>
